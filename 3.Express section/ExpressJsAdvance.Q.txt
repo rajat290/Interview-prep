@@ -1,15 +1,38 @@
 🔹 Express.js (Advanced Level)
 ✅ Core Areas:
-Middleware architecture
+1.Middleware architecture
 
-Error handling best practices
+2.Error handling best practices
 
-Securing routes with auth
+3.Securing routes with auth
 
-Scalable folder structure
+4.Scalable folder structure
 
-REST API structure and versioning
+5.REST API structure and versioning
 
-Handling async/await and centralized error responses
+6.Handling async/await and centralized error responses
 
-Rate limiting, helmet, and security middleware
+7.Rate limiting, helmet, and security middleware
+
+===========================================
+
+🔸 Q1. How do you structure a large-scale Express.js project?
+Mock Answer:
+
+I follow modular structure — separate folders for routes, controllers, services, and models. I use index.js to organize routes. Middleware and config files are isolated. This makes the app maintainable and scalable. I also follow MVC-style separation for clean code.
+
+🔸 Q2. How do you implement centralized error handling in Express?
+I use a custom error-handling middleware at the end of all routes, with a class like AppError for consistent error structure. All async routes use a wrapper like catchAsync() to forward errors to next(), allowing unified error logging and response.
+
+🔸 Q3. What’s the purpose of middleware in Express? Can you give real-use examples?
+Middleware are functions that run before the request reaches the controller. Examples include: logging requests (morgan), parsing body (body-parser), authentication (verifyToken), validation, and error handling. Custom middleware allows layered and reusable logic.
+
+🔸 Q4. How do you secure your Express API endpoints?
+Mock Answer:
+
+I use JWT-based auth in headers, protected via middleware. Additionally, I use Helmet to secure headers, CORS for cross-origin handling, express-rate-limit to prevent brute-force attacks, and sanitize inputs to avoid NoSQL injection.
+
+🔸 Q5. How would you handle file uploads in Express?
+Mock Answer:
+
+I use multer for handling multipart/form-data. I define a disk storage engine or connect it to cloud storage like AWS S3. Then I build a route like /upload with middleware that processes file, followed by controller logic to save metadata or respond.

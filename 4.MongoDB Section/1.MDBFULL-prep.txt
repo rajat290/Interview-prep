@@ -1,0 +1,40 @@
+🔹 1. What is MongoDB and why use it in MERN?
+Answer: MongoDB is a NoSQL, document-oriented database. It stores data in flexible, JSON-like documents (BSON). In MERN, it pairs naturally with JavaScript and allows fast, schema-less development.
+
+Mock Q&A: Q: Why is MongoDB preferred over SQL in the MERN stack? A: Because it's schema-less, JSON-friendly, and allows flexible document storage. It works seamlessly with Node.js and is better for evolving data models.
+
+🔹 2. Explain Collections and Documents in MongoDB.
+Answer:
+
+A collection is like a table.
+
+A document is like a row — a JSON-like object.
+
+Mock Q&A: Q: What is the difference between a MongoDB collection and an SQL table? A: A collection doesn't require a predefined schema, and documents inside it can have different structures, unlike strict SQL tables.
+
+🔹 3. CRUD Operations in MongoDB
+Answer:
+
+Create: insertOne(), insertMany()
+
+Read: find(), findOne()
+
+Update: updateOne(), updateMany()
+
+Delete: deleteOne(), deleteMany()
+
+Mock Q&A: Q: How do you update a specific field in a MongoDB document? A: Using updateOne({ _id: id }, { $set: { field: value } })
+
+🔹 4. Mongoose – ODM for MongoDB
+Answer: Mongoose provides schema and model structure to MongoDB documents in Node.js. It’s a layer of structure for otherwise unstructured documents.
+
+Mock Q&A: 
+Q: Why use Mongoose instead of native MongoDB driver?
+A: Mongoose adds schemas, validations, middleware, and a simpler API for MongoDB operations.
+
+🔹 5. MongoDB Aggregation Framework
+Answer: Used to process data and return computed results. It works like a pipeline of transformations.
+
+Mock Q&A: 
+Q: Can you give an example of using aggregation? 
+A: db.orders.aggregate([{ $match: { status: "completed" } }, { $group: { _id: "$userId", total: { $sum: "$amount" } } }])
