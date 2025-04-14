@@ -1,0 +1,36 @@
+Responsibilities:
+
+Develop and maintain high-performance web applications using the MERN stack.
+Collaborate with cross-functional teams to define and implement innovative solutions.
+Design and develop secure, scalable, and efficient APIs.
+Work closely with designers to build responsive and user-friendly interfaces.
+Optimize applications for performance, security, and reliability.
+Debug and resolve technical issues to ensure smooth application functionality.
+Stay updated with emerging technologies and best practices in web development.
+
+
+Requirements:
+
+3+ years of experience as a MERN Stack Developer or in a similar role.
+Strong expertise in MongoDB, Express.js, React, and Node.js.
+Proficiency in JavaScript, HTML, CSS, and UI frameworks like Bootstrap or Material-UI.
+Experience with Git/GitHub for version control.
+Solid understanding of RESTful API design and database management (SQL & NoSQL).
+Excellent problem-solving skills and attention to detail.
+Ability to work independently and within a team-oriented environment.
+Education:
+
+Bachelor’s degree in Computer Science, IT, or a related field.
+Benefits:
+
+✅ Flexible schedule
+
+✅ Paid time off & leave encashment
+
+✅ A dynamic and growth-focused work environment
+
+✅ Day shift | Monday to Friday
+
+
+
+in short they need a MERN stack developer with 3+ years of experience, strong skills in JavaScript, HTML, CSS, and UI frameworks, and a solid understanding of RESTful API design and database management. The role involves developing high-performance web applications, collaborating with teams, and optimizing applications for performance and security. The company offers a flexible schedule, paid time off, and a dynamic work environment.
