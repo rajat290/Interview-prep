@@ -1,0 +1,38 @@
+🔹 1. What is Express.js and why use it in Node.js?
+Express is a minimal and flexible Node.js web framework that provides robust features for web and API development.
+
+Mock Q&A:
+Q: What are the benefits of Express?
+A: Routing, middleware, performance, integration with templating engines, and easy handling of requests/responses.
+
+🔹 2. Explain Routing in Express.js
+Routing is the process of mapping URLs to specific functions in Express.js. It allows developers to define routes
+Express uses methods like app.get(), app.post() to handle different HTTP requests.
+Mock Q&A: 
+Q: How do you define a route in Express? A: app.get('/users', (req, res) => { res.send('User list') })
+
+🔹 3. Middlewares in Express.js
+Answer: Middleware functions have access to req, res, and next(). They are used for logging, auth, error-handling, etc.
+
+Mock Q&A: Q: What is next() used for? A: It passes control to the next middleware in the stack.
+
+🔹 4. Express Error Handling
+Answer: Error-handling middleware has four parameters: (err, req, res, next).
+
+Mock Q&A: Q: What is the purpose of error-handling middleware? A:
+It catches and handles errors in the application.
+
+Q: How do you define a global error handler? A:
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+
+🔹 5. API development with Express
+Answer: Express allows easy RESTful API creation using routes, controllers, and JSON response handling.
+
+Mock Q&A: Q: How do you create a RESTful API using Express?
+A: Use routes like app.get(), app.post() to handle different HTTP requests.
+
+Q: How do you send a JSON response in Express? A: res.json({ message: 'Success' })
