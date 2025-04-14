@@ -1,0 +1,24 @@
+🔹 MongoDB (Advanced Level)
+ Core Areas:
+Schema design in NoSQL (embedded vs referenced)
+Indexing for performance
+Aggregation pipelines
+Transactions & ACID in MongoDB
+Working with large data sets
+Real-world query optimization
+Data modeling based on use case
+Security best practices (NoSQL injection, roles, etc.)
+
+🔸 Q1. How would you design a MongoDB schema for a social media platform with posts, comments, and likes?
+What they’re testing: Data modeling decisions, referencing vs embedding.
+
+
+🎯 Mock Verbal Q&A – MongoDB
+
+🔸 Q1. How would you design a MongoDB schema for a social media platform with posts, comments, and likes?
+What they’re testing: Data modeling decisions, referencing vs embedding.
+
+
+Mock Answer (Verbal-style):
+
+For posts and comments, I’d use referencing to maintain scalability — each post document will have a reference to comment IDs. Likes can be embedded as an array of user IDs inside posts, as they’re small and frequently accessed. This structure balances read performance and write efficiency, and keeps the document size optimal.

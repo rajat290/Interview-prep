@@ -1,0 +1,15 @@
+🔹 Express.js (Advanced Level)
+✅ Core Areas:
+Middleware architecture
+
+Error handling best practices
+
+Securing routes with auth
+
+Scalable folder structure
+
+REST API structure and versioning
+
+Handling async/await and centralized error responses
+
+Rate limiting, helmet, and security middleware
