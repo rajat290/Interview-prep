@@ -1,0 +1,105 @@
+Ques1. How do we handle Routing in Express js?
+in Express js routing is handled using the Router class which allows you  to define  routes for your application.
+
+Ques2. Difference between req.params, req.query and req.body?
+In Express all these Three are Used to access data sent in a HTTP request.
+
+ [A].req.params: These are the parameters passed in the URL path. it majorly focused on the Heading Part ,
+Matlab ki jab URL ke andar jo dynamic path variables hoti hain unka data yahan milta hai.
+
+ For example, 
+app.get('/user/:id', (req, res) => {
+  console.log(req.params.id);  // Output: 123
+  res.send(`User ID is ${req.params.id}`);
+});
+
+URL to hit:
+http://localhost:3000/user/123
+
+ [B]. req.query: These are the parameters passed in the URL query string.
+ req.query	URL ke ? ke baad jo key=value format me hota hai, wo yahan milta hai.
+ 
+app.get('/search', (req, res) => {
+  console.log(req.query.keyword);  // Output: mobile
+  res.send(`Searching for ${req.query.keyword}`);
+});
+URL to hit:
+http://localhost:3000/search?keyword=mobile
+
+    
+
+[C]. req.body: These are the parameters passed in the request body.
+req.body	Form ya JSON ke zariye bheja gaya data (mostly in POST/PUT requests).
+
+For example,
+app.use(express.json()); // important to read JSON body
+
+app.post('/login', (req, res) => {
+  console.log(req.body.email);  // Output: ravi@example.com
+  res.send(`Welcome, ${req.body.email}`);
+});
+URL to hit:
+http://localhost:3000/login
+
+Client sends this data as JSON:
+
+{
+    "email": "ravi@example.com",
+    "password": "123456"
+    }
+
+🧪 Comparison Table
+| req.params | req.query | req.body |
+| --- | --- | --- |
+| URL Path Variables | URL Query String | Request Body (JSON/FORM) |
+| e.g. /user/:id | e.g. /search?keyword=mobile |
+| e.g. req.params.id | e.g. req.query.keyword | e.g. req.body
+
+A REAL LIFE EXAMPLE WITH 🧠 SUPER SIMPLE (BACHHON WALI) EXPLANATION 
+
+1. 🛣️ req.params ➝ Road ke upar likha hua naam
+Socho tum ek building ke flat pe ja rahe ho:
+/user/123 ➝ Flat number 123
+To 123 tumhara req.params.id hai
+
+2. ❓ req.query ➝ Sawal poochhne wale questions
+Tum Google pe search karte ho:
+/search?keyword=mobile&price=low
+Yahan keyword aur price tumhare req.query ke part hain
+
+3. 📦 req.body ➝ Andar se aayi hui parcel wali info
+
+Ham jab form bharke server ko bhejte ho:
+
+{
+  "name": "Ravi",
+  "email": "ravi@example.com"
+}
+Yeh data req.body me milta hai
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. What is the difference between req and res in Express js?
+req is the request object which contains information about the incoming request, while res is the response object which
+is used to send the response back to the client.
+
+3. What is middleware in Express js?
