@@ -210,3 +210,5 @@ is used to send the response back to the client.
 
 
 3. What is body Parser in Express js? how do you use them ?
+🔧 1. TECHNICAL DEFINITION
+Body Parser is a middleware in Express.js that parses the incoming request body (usually in JSON, form, or URL-encoded format) and makes it available in req.body.
