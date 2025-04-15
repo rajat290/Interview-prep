@@ -1,0 +1,39 @@
+Node js is single threaded , non blocking , async, event driven runtie built on chroms v8 engine. 
+it uses Event loop to handle multiple operations cncurrently without creating multile threads.
+
+🧠 Easy Explanation
+Socho tum ek chai ki tapri (tea stall) chala rahe ho ☕
+
+Ek hi aadmi (thread) sab sambhal raha hai: order lena, chai banana, paise lena
+
+Lekin yeh aadmi smart hai — wo bolta hai:
+➤ "Abe tu chai garam hone tak side me ho ja, mai dusre ka order le leta hoon"
+
+Jab chai ready hoti hai, wo chillata hai: "Ready hai bhai!"
+➤ Fir wo serve karta hai
+Yeh hi Node.js ka Event Loop hai — ek smart aadmi jo sab kaam line se karwata hai bina rukke.
+
+⚙️ How Node.js Works Internally (Step-by-Step):
+graph TD
+    A[User makes a request] --> B[Node.js receives it]
+    B --> C[Check: Is it blocking?]
+    C -->|No| D[Process directly & Respond]
+    C -->|Yes| E[Send to Background Worker Thread]
+    E --> F[Once done, pushes callback in Event Queue]
+    F --> G[Event Loop picks it]
+    G --> H[Sends result to user]
+
+
+🔁 Breakdown:
+Single Thread: Node.js runs on one thread but can handle many requests
+
+V8 Engine: Converts JS code into fast machine code
+
+Libuv: C++ library that handles thread pool, file system, networking
+
+Event Loop: Heart of Node.js, keeps checking for pending tasks/callbacks
+
+Callback Queue: Stores tasks that are ready to be executed
+
+Thread Pool: For CPU-heavy tasks (e.g., file reading)
+
