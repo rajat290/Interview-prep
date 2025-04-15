@@ -1,0 +1,1 @@
+Body Parser is a middleware in Express.js that parses the incoming request body (usually in JSON, form, or URL-encoded format) and makes it available in req.body.
