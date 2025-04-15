@@ -1,0 +1,76 @@
+What is CORS and how do you handle it in an Express Application 
+A. CORS stands for Cross-Origin Resource Sharing. It is a security feature implemented in web browsers to
+prevent web pages from making requests to a different domain than the one the web page was loaded from.
+
+Iska error aata hai to beginners confuse ho jaate hain —
+"Access to fetch at ... has been blocked by CORS policy" 😵
+
+Soch:
+
+Ek frontend (React app) ka ghar hai: http://localhost:3000
+
+Ek backend (Express app) ka ghar hai: http://localhost:5000
+
+Ab agar frontend backend ke ghar jaye bina permission ke — browser bolega ❌
+
+"Yeh dusre area ka banda hai, entry nahi milegi!" 🚫
+
+CORS kya karega?
+
+Backend bolega: "Haan bhai, 3000 waalon ko andar aane do." ✅
+
+🚧 3. WHEN CORS ERROR HAPPENS?
+If you're calling an Express API from:
+
+React app
+
+Postman / frontend from different port or domain
+
+Access to fetch at 'http://localhost:5000/data'
+from origin 'http://localhost:3000' has been blocked by CORS policy
+
+
+✅ 4. HOW TO FIX CORS IN EXPRESS
+🔌 Step 1: Install CORS middleware
+npm install cors
+
+🛠 Step 2: Use it in your Express app
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+
+// Allow all origins
+app.use(cors());
+
+app.get('/api/data', (req, res) => {
+  res.json({ message: 'Hello from Express!' });
+});
+
+app.listen(5000, () => console.log('Server running on port 5000'));
+
+🛡 Step 3: Restrict to specific origin (optional)
+app.use(cors({
+  origin: 'http://localhost:3000'  // only allow React frontend
+}));
+
+💡 Step 4: Allow credentials (if sending cookies/tokens)
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
+
+
+🎯 5. REAL-WORLD USAGE
+Use Case	CORS Needed?
+React frontend + Express backend	✅ Yes
+Backend API used by mobile app	✅ Yes
+Frontend & backend on same domain	❌ Not needed
+
+📌 6. INTERVIEW SUMMARY LINE
+“CORS is a browser security feature that blocks requests from different origins. In Express.js, we fix this using the cors middleware, which tells the browser which origins are allowed to access our backend APIs.”
+
+
+🔥 BONUS ANALOGY
+🏢 Imagine a company where outsiders can’t enter the building unless security gives permission.
+CORS = That security guard at the gate saying “Allowed” or “Blocked”.
