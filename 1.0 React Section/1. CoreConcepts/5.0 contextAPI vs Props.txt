@@ -1,0 +1,36 @@
+What is Context API, and how is it different from Props?
+
+✅ 1. What is Context API (Simple Definition)?
+Context API is a feature in React that allows you to share data globally (like state, themes, or user info) across your component tree without passing props manually at every level.
+
+It’s like a global data store for your app, but lighter than Redux.
+
+📦 Real-life Example:
+Imagine a shopping app with a logged-in user, and you want to show the user's name on navbar, sidebar, and checkout page. Instead of passing user info as props through every component, you can use Context API to access the user info directly anywhere.
+
+🔁 2. Props vs Context – What’s the Difference?
+
+Feature  || 	Props	  ||  Context API
+Direction	|| Top → Down (Parent to Child) || 	Available globally (no drilling)
+Usage	 || Used to pass data between components || 	Used to share global data (like auth, theme)
+Flexibility || 	Fine for short tree depth || 	Best for deep nested components
+Performance ||	No overhead	|| Slight rerender overhead if misused
+
+
+🧠 When to Use Context API?
+✅ Use it when:
+--------------------------------------------------
+You have global data like auth info, user role, theme, language, cart items etc.
+
+You want to avoid props drilling (passing data down multiple levels unnecessarily)
+
+❌ Don’t use it for every state (like input field text), otherwise app becomes tightly coupled.
+
+
+🗣️ Interview-Ready Verbal Answer:
+Props are used to pass data from one component to another, but they can lead to "props drilling" when the tree is deeply nested.
+React’s Context API helps us avoid this by providing a way to share values globally across components, without manually passing props at every level.
+For example, in my last project I used Context API to manage the logged-in user's info so that Navbar, Sidebar, and Protected Routes could access it easily without prop chaining.
+
+
+

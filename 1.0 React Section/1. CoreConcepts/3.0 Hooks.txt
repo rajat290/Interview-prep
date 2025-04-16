@@ -1,0 +1,122 @@
+What are the some of the commonly used Hooks in React?
+ before knowing about three comonly used hooks , we should learn about what is hook
+
+ hooks are the special functions in React that let use "hook into " React features like state , lifeCycle, and the context inside the functional components
+
+ 🏆 Top Commonly Used React Hooks (with explanation + example)
+ 1. **useState**: For managing local state in functional components.
+ Use case: Toggle button, form input values, modal open/close, etc.
+ const [count, setCount] = useState(0);
+<button onClick={() => setCount(count + 1)}>Click Me</button>
+
+
+2. **useEffect**: For handling side effects in functional components.
+Purpose: Run side-effects like API calls, timers, or subscriptions.
+
+useEffect(() => {
+  fetchData();
+}, []); // Runs once after component mounts
+
+✅ Bonus: You can also return a cleanup function:
+
+useEffect(() => {
+  const timer = setInterval(() => console.log("Tick"), 1000);
+  return () => clearInterval(timer); // cleanup
+}, []);
+
+3. useContext
+Purpose: Share state globally across components (avoid prop-drilling).
+
+Use case: Auth info, theme, language settings
+import { useContext } from 'react';
+import { ThemeContext } from './ThemeContext';
+const { theme } = useContext(ThemeContext);
+const { user } = useContext(AuthContext);
+
+4. useRef
+Purpose: Create a reference to a DOM element or a value that persists between renders.
+
+2nd Definition
+ Access and persist mutable DOM refs or values across renders without re-rendering.
+
+ Use case: Focus input field, track previous values, timer ID storage.
+
+const inputRef = useRef(null);
+
+const focusInput = () => {
+  inputRef.current.focus();
+};
+
+<input ref={inputRef} />
+
+5. useMemo
+Purpose: Memoize expensive calculations to avoid recomputation on every render.
+
+Use case: Filtering large lists, sorting data.
+
+const expensiveValue = useMemo(() => computeHeavy(input), [input]);
+
+
+6. useCallback
+Purpose: Memoize function references to avoid unnecessary re-renders.
+
+Use case: When passing functions to child components, to avoid unnecessary renders.
+
+const handleClick = useCallback(() => {
+  console.log('Clicked!');
+}, []);
+
+
+7. useReducer
+
+Purpose: Alternative to useState for complex state logic.
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "INCREMENT": return { count: state.count + 1 };
+    default: return state;
+  }
+};
+
+const [state, dispatch] = useReducer(reducer, { count: 0 });
+
+
+8. useLayoutEffect
+Purpose: Like useEffect but fires before paint, so better for measuring layout, animation sync.
+
+Use case: DOM measurement, scroll position, animations.
+
+useLayoutEffect(() => {
+  // measure and mutate DOM before painting
+}, []);
+
+⚠️ Should be used carefully, it can block UI paint.
+
+📚 Bonus Hooks (Advanced/Real-World Usage)
+Hook	Use Case
+useImperativeHandle	Expose functions from child to parent via ref
+useId	For generating unique IDs (e.g., forms)
+useSyncExternalStore	Sync with external state stores (React 18+)
+useTransition	For deferring UI updates (React 18+)
+
+🗣️ Mock Interview Answer (3+ YOE Verbal)
+React offers built-in Hooks to manage different aspects of component behavior.
+I frequently use useState for local state and useEffect for side effects like API calls.
+For global state like auth, I use useContext, and when building large forms or handling complex logic, useReducer gives better structure.
+I also use useRef for DOM access and to avoid re-renders with persistent values.
+To optimize performance, I use useMemo for memoizing computed data and useCallback to memoize functions passed to children.
+These Hooks let us build fast, scalable, and maintainable UIs without using class components.
+
+
+🧠 Real-Life Analogy:
+Think of hooks as tools in a toolbox — each hook does a specific job: one for memory (useState), one for reacting to environment changes (useEffect), one for shared memory (useContext), and so on.
+
+✅ Summary Table:
+Hook	Purpose	Real Use Case
+useState	Local state	Form inputs, toggles
+useEffect	Side effects, lifecycle	API calls, timers
+useContext	Global shared state	Auth, Theme
+useRef	DOM refs / persistent values	Input focus, scroll, timers
+useMemo	Memoize computed values	Filters, table sorting
+useCallback	Memoize functions	Pass to children to avoid re-renders
+useReducer	Complex state logic	Forms, calculators, dashboards
+useLayoutEffect	Layout measurement, before paint	DOM size, animation sync
