@@ -1,0 +1,35 @@
+In this task, the objective is to develop a full-stack E-commerce application with both frontend and backend functionality. The application will include standard sections such as a header, hero section, main content area, shop section, and footer. It will feature multiple products and provide functionality for adding and managing data through an admin panel.
+
+Key requirements:
+1. Develop a **frontend** for the E-commerce website with user-friendly design and responsive layout.
+2. Implement a **backend** to handle business logic, API integration, and database operations.
+3. Include **sign-in and sign-up functionality** for both users and admins.
+4. Fetch data from an **external API** as well as from the **database**.
+5. Store and manage data in the **database**.
+6. Provide an **admin panel** to manage the following:
+    - Add new products
+    - Add images
+    - Update prices
+    - Update quantity
+    - Update status
+    - Update description
+    - Update category
+    - Update subcategory
+    - Update tags
+    - Update product name
+    - Add product variants
+    - Add product options
+    - Add product reviews
+    - Add product ratings
+    - Add product videos
+    - Add product galleries
+7. Implement **user functionality** for browsing, searching, and purchasing products.
+8. Ensure secure authentication and authorization for both users and admins.
+9. Include features such as:
+    - Product filtering and sorting
+    - Shopping cart and checkout
+    - Order history and tracking
+    - Wishlist functionality
+10. Follow best practices for **full-stack development**, including clean code, modular architecture, and proper error handling.
+
+The goal is to create a robust, scalable, and feature-rich E-commerce application that meets the needs of both users and admins.
