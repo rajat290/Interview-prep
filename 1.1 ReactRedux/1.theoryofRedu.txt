@@ -1,0 +1,95 @@
+🔥 What is Redux?
+
+Redux is a predictable state management library used to manage and centralize application state across components.
+
+It acts as a single source of truth where all state lives in a single global store, and changes to state happen in a predictable way using actions and reducers.
+
+❓ Why Redux is Used?
+
+React ke andar agar teri app chhoti hai (2-3 component tak), to useState ya useContext se kaam ho jata hai.
+
+But when:
+
+App becomes large
+
+State needs to be shared across many components
+
+You need state consistency
+
+Want debuggable and trackable state updates
+
+🧠 Redux becomes very helpful because:
+
+Central store
+
+Clean data flow
+
+Time-travel debugging (DevTools)
+
+Middleware support (for async, logging etc.)
+
+⏱️ When to Use Redux?
+Use Redux when:
+
+App has complex or deeply nested components
+
+State is shared between many sibling components
+
+You want strict control on how and when state updates
+
+You need middleware features like logging, API, caching
+
+❌ Don’t use Redux if:
+
+Your app is small
+
+You don’t have shared state
+
+useState or Context API is enough
+
+🧩 Where Redux is Used?
+E-commerce: Cart, Filters, Auth, Wishlist, Inventory
+
+Social Apps: Post feed, reactions, user session, modals
+
+Dashboards: Real-time data updates, filters, multi-view sync
+
+🔁 Redux Flow Explained (Step-by-Step with Real Life Example)
+Let’s understand with analogy first:
+
+🍕 Example:
+Imagine a pizza restaurant (Redux system):
+
+Customer (Component) places an order (dispatches an action)
+
+Waiter (Action) takes the order to the kitchen
+
+Kitchen (Reducer) decides how to update the order queue
+
+Order Board (Store) updates with new order info
+
+Customer sees the updated order status
+
+🧠 Redux Data Flow in Code:
+
+1. User clicks ➝ dispatch(action)
+2. action → reducer
+3. reducer → updates state
+4. component → gets updated state from store
+
+🏗️ Redux Core Concepts:
+Concept 	Role
+Store	  => Centralized place where the state lives
+Action	  => Object describing “what happened”
+Reducer	  => Pure function that updates state based on action
+Dispatch	=> Function to send action to reducer
+Selector	=> Access data from store
+Middleware	=> Intercepts actions (e.g., for async like redux-thunk)
+
+🔧 Redux Code Structure (Simple Counter)
+Step 1: Define Action
+
+// actions.js
+export const increment = () => ({ type: "INCREMENT" });
+export const decrement = () => ({ type: "DECREMENT" });
+
