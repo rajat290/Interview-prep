@@ -1,0 +1,100 @@
+Q. 1 What do you mean by Hoisting in JavaScript ?
+A. It is a process of moving a variable or function to the top of the current scope.
+
+✅ 1. Official Definition (Technical):
+Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope (either the global scope or function scope) during the compilation phase, before the code is executed.
+
+🧒 2. Simplified Definition (Kindergarten Style):
+
+
+Imagine JavaScript as a teacher who reads the entire exam paper before starting to solve it. It picks out all the names of students (variables) and tools (functions) first and writes them on the board. But if any student doesn’t bring their stuff (value), the teacher only remembers their name, not what they brought.
+
+So:
+
+The name is remembered early.
+
+The value comes later (if at all).
+
+🎯 3. Why is Hoisting Used?
+It allows us to reference functions and variables before their actual declaration in code.
+
+Makes JavaScript flexible — but also a bit confusing if you’re not aware of it.
+
+🧪 4. How Hoisting Works – Coding Example
+
+
+ Example with var:
+console.log(greeting);  // Output: undefined
+var greeting = "Hello!";
+
+✅ Behind the scenes, JS changes it to:
+
+var greeting;
+console.log(greeting);  // undefined
+greeting = "Hello!";
+
+
+🚫 Example with let or const:
+
+console.log(name);  // ❌ ReferenceError: Cannot access 'name' before initialization
+let name = "Alice";
+
+✅ Why? Because let and const are hoisted, but not initialized, so they live in a "temporal dead zone" until the line where they are declared.
+
+✅ Example with Functions:
+sayHello();  // Output: Hello!
+function sayHello() {
+  console.log("Hello!");
+}
+
+✅ Function declarations are fully hoisted — both name and body.
+
+🌍 5. Real-World Use Case:
+⚙️ Frameworks & Libraries:
+In large JS applications or React/Node apps, understanding hoisting is important when:
+
+Organizing code files
+
+Avoiding bugs from using variables/functions too early
+
+Managing execution flow
+
+
+🧠 6. Concepts Involved in Hoisting
+Concept	Behavior
+var	Hoisted + initialized to undefined
+let / const	Hoisted but not initialized (Temporal Dead Zone)
+Function Declaration	Fully hoisted (name + body)
+Function Expression	Only variable is hoisted
+
+
+====================================================================================================================================================================================================================
+
+question number 2  session and local storage
+
+Session Storage and Local Storage, which are super important for frontend JavaScript—especially in real-world apps like e-commerce sites, form saving, and auth tokens.
+
+✅ 1. Official Definition (Technical):
+
+Local Storage:
+A Web Storage API that stores key-value pairs in the browser with no expiration time.
+
+Data persists even after the browser is closed and reopened.
+
+Session Storage:
+Similar to Local Storage, but data is cleared when the page session ends (i.e., when the browser tab is closed).
+
+Both use the Storage interface and are synchronous.
+
+
+
+===============================================================================================================================================================
+
+
+3. How can Page loading time can be reduced ?
+
+5. How GraphQl is different from the Rest ?
+06. 
+08. What are the Various DataTypes Present in JS?
+09. What is DOm ?
+10 What is THIS keyword in JS
