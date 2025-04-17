@@ -9,12 +9,16 @@ import CartProvider from "./context/CartContext";
 import AddProduct from "./Pages/AddProduct";
 import Products from "./Pages/Products"; // Importing Products component
 import "./styles/global.css";
+import "./components/Footer"
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <CartProvider>
     <Router>
       <Navbar />
+      {/* <Products /> */}
+      <Footer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
