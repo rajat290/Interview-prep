@@ -1,22 +1,45 @@
-// ===== FRONTEND (src/pages/Register.js) =====
+// src/pages/Register.jsx
 import React, { useState } from "react";
-import axios from "axios";
+import API_BASE from "../utils/api";
+import "../styles/form.css";
+import "../styles/global.css";
 
 const Register = () => {
-  const [user, setUser] = useState({ name: "", email: "", password: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    role: "user", // or "admin"
+  });
+  const [msg, setMsg] = useState("");
 
-  const handleRegister = async (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/api/auth/register", user);
-    alert("Registered successfully");
+    const res = await fetch(`${API_BASE}/auth/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+    setMsg(data.msg || "Registered!");
   };
 
   return (
-    <form onSubmit={handleRegister}>
-      <input placeholder="Name" onChange={(e) => setUser({ ...user, name: e.target.value })} />
-      <input placeholder="Email" onChange={(e) => setUser({ ...user, email: e.target.value })} />
-      <input placeholder="Password" type="password" onChange={(e) => setUser({ ...user, password: e.target.value })} />
+    <form onSubmit={handleSubmit}>
+      <input name="name" onChange={handleChange} placeholder="Name" />
+      <input name="email" type="email" onChange={handleChange} placeholder="Email" />
+      <input name="password" type="password" onChange={handleChange} placeholder="Password" />
+      <select name="role" onChange={handleChange}>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
       <button type="submit">Register</button>
+      <p>{msg}</p>
     </form>
   );
 };
