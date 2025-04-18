@@ -1,20 +1,13 @@
-const express = require ('express');
-const logger = require ('../middlewares/logger');
-const auth = express.Router();
+const auth = (req, res, next) => {
+    const token = req.query.token;
 
-const app = express();
+    if (token === 'secret123') {
+        console.log('Authenticated!');
+        next();
+    } else {
+        console.log('Authentication failed!');
+        res.status(401).send('Unauthorized!');
+    }
+    };
 
-app.use (logger);
-
-//public route 
-
-app.get('./home',(req, res) => {
-    res.send ('Welcome to the home page');
-})
-
-//private route
-app.get ('./dashboard', (req, res) => {
-    res.send ('Welcome to the dashboard pagge(Protected page)');
-})
-
-//auth middleware
+module.exports = auth;
