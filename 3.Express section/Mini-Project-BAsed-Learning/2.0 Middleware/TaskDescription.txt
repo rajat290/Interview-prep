@@ -1,0 +1,14 @@
+Ek chhota sa Express app banayenge jisme:
+
+Middleware use hoga
+
+Har request ko log karega
+
+Auth middleware check karega ki user authenticated hai ya nahi
+
+Project Overview
+
+Feature | Middleware Used
+Log every request | loggerMiddleware
+Block unauthenticated | authMiddleware
+Handle routes | /home, /dashboard etc.
