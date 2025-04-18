@@ -1,0 +1,24 @@
+Key differences between MongoDB and relational databases.
+- MongoDB allows for flexible storage in a single document, accommodating varied data types without a strict schema.
+- Relational databases require multiple tables with defined relationships, necessitating 
+careful management of foreign keys for data retrieval.
+
+Understanding MongoDB replica sets for data redundancy and availability.
+- A replica set consists of one primary node and multiple secondary nodes for data backup and protection.
+- Read and write operations can be configured for the primary and secondary servers to manage data consistency.
+
+Understanding database acknowledgment levels and read consistency in operations.
+- Levels of write acknowledgment include W1 (primary only), W majority (most secondaries), and W0 (no acknowledgment).
+- Read consistency types are local (only primary), majority (most secondaries), and available (any node regardless of updates).
+
+Understanding data aggregation and sharding in MongoDB.
+- Aggregation involves calculating values, such as sums and counts, from data sets in MongoDB collections.
+- Sharding distributes data across multiple servers, improving performance and handling large databases efficiently.
+
+Sharding in MongoDB enhances database performance and scalability.
+- Data sharding divides a large database into smaller, manageable pieces called shards, allowing for better load distribution.
+- A shard key determines how user profiles are distributed across shards, preventing crashes under simultaneous access from multiple servers.
+
+Understanding Object ID and transaction handling in MongoDB.
+- The Object ID in MongoDB documents is a unique identifier that includes a timestamp, machine-specific random value, and an incrementing counter.
+- Transactions in MongoDB require a session to be initiated, during which operations are performed, followed by committing or ending the session.
