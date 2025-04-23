@@ -105,3 +105,4 @@ export const quadrupleIncrement = () => ({ type: "QUADRUPLE_INCREMENT" });
 export const customDecrementBy = (amount) => ({ type: "CUSTOM_DECREMENT_BY", payload: amount });
 export const setCountToZero = () => ({ type: "SET_COUNT_TO_ZERO" });
 export const incrementByFive = () => ({ type: "INCREMENT_BY_FIVE" });
+export const incrementByTen = () => ({ type: "INCREMENT_BY_TEN" });
