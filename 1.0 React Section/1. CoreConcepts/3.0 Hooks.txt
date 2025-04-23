@@ -120,3 +120,5 @@ useMemo	Memoize computed values	Filters, table sorting
 useCallback	Memoize functions	Pass to children to avoid re-renders
 useReducer	Complex state logic	Forms, calculators, dashboards
 useLayoutEffect	Layout measurement, before paint	DOM size, animation sync
+
+Hooks allow developers to manage state and side effects in functional components, enhancing code reusability and readability while avoiding the complexities of class components.
