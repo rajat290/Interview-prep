@@ -754,6 +754,7 @@ Browser sees immediate content
 
 Then React hydrates the page (adds interactivity)
 
+It improves performance and SEO, as search engines can index the fully rendered page, and users see content faster, leading to a better user experience.
 
 
 
