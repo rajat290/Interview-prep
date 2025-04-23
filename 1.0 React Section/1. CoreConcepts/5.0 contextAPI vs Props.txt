@@ -33,4 +33,5 @@ React’s Context API helps us avoid this by providing a way to share values glo
 For example, in my last project I used Context API to manage the logged-in user's info so that Navbar, Sidebar, and Protected Routes could access it easily without prop chaining.
 
 
+In summary, while Props are essential for passing data between components in a controlled manner, the Context API offers a more efficient solution for managing global state and avoiding the complexities of props drilling in larger applications.
 
