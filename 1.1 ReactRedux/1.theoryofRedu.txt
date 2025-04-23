@@ -93,3 +93,15 @@ Step 1: Define Action
 export const increment = () => ({ type: "INCREMENT" });
 export const decrement = () => ({ type: "DECREMENT" });
 
+
+export const reset = () => ({ type: "RESET" });
+export const setCount = (count) => ({ type: "SET_COUNT", payload: count });
+export const customIncrement = (amount) => ({ type: "CUSTOM_INCREMENT", payload: amount });
+export const customDecrement = (amount) => ({ type: "CUSTOM_DECREMENT", payload: amount });
+export const doubleIncrement = () => ({ type: "DOUBLE_INCREMENT" });
+export const tripleIncrement = () => ({ type: "TRIPLE_INCREMENT" });
+export const halfDecrement = () => ({ type: "HALF_DECREMENT" });
+export const quadrupleIncrement = () => ({ type: "QUADRUPLE_INCREMENT" });
+export const customDecrementBy = (amount) => ({ type: "CUSTOM_DECREMENT_BY", payload: amount });
+export const setCountToZero = () => ({ type: "SET_COUNT_TO_ZERO" });
+export const incrementByFive = () => ({ type: "INCREMENT_BY_FIVE" });
