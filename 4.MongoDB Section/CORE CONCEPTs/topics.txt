@@ -22,3 +22,4 @@ Sharding in MongoDB enhances database performance and scalability.
 Understanding Object ID and transaction handling in MongoDB.
 - The Object ID in MongoDB documents is a unique identifier that includes a timestamp, machine-specific random value, and an incrementing counter.
 - Transactions in MongoDB require a session to be initiated, during which operations are performed, followed by committing or ending the session.
+- MongoDB supports multi-document transactions, ensuring data integrity across multiple operations, similar to traditional relational databases.
