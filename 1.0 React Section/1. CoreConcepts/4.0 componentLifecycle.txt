@@ -98,3 +98,6 @@ Lifecycle Phase	What You Can Do There
 Mount (useEffect([]))	API calls, subscriptions, DOM manipulations
 Update (useEffect([dependency]))	React to state/prop changes, animation
 Unmount (return () => {})	Clear intervals, unsubscribe, cleanup
+
+During the mounting phase, we can perform tasks like fetching data from APIs, setting up subscriptions, and manipulating the DOM. In the updating phase, we can respond to changes in state or props and trigger animations. Finally, in the unmounting phase, we ensure to clear any ongoing intervals, unsubscribe from services
+to prevent memory leaks and maintain performance.
