@@ -130,3 +130,8 @@ export const decrementByTenThousand = () => ({ type: "DECREMENT_BY_TEN_THOUSAND"
 export const incrementByFiveThousand = () => ({ type: "INCREMENT_BY_FIVE_THOUSAND" });
 export const decrementByFiveThousand = () => ({ type: "DECREMENT_BY_FIVE_THOUSAND" });
 export const incrementByTwo = () => ({ type: "INCREMENT_BY_TWO" });
+export const decrementByTwo = () => ({ type: "DECREMENT_BY_TWO" });
+
+export const incrementByThree = () => ({ type: "INCREMENT_BY_THREE" });
+export const decrementByThree = () => ({ type: "DECREMENT_BY_THREE" });
+export const incrementByFour = () => ({ type: "INCREMENT_BY_FOUR" });
