@@ -106,3 +106,5 @@ export const customDecrementBy = (amount) => ({ type: "CUSTOM_DECREMENT_BY", pay
 export const setCountToZero = () => ({ type: "SET_COUNT_TO_ZERO" });
 export const incrementByFive = () => ({ type: "INCREMENT_BY_FIVE" });
 export const incrementByTen = () => ({ type: "INCREMENT_BY_TEN" });
+export const decrementByFive = () => ({ type: "DECREMENT_BY_FIVE" });
+export const decrementByTen = () => ({ type: "DECREMENT_BY_TEN" });
